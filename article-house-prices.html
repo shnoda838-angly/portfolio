@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Really Drives House Prices? | Shnoda Faik</title>
+<style>
+:root{--bg:#0f1720;--tx:#e8eef5;--mu:#93a4b8;--ac:#2dd4a7}
+@media(prefers-color-scheme:light){:root{--bg:#f6f8fb;--tx:#14202e;--mu:#5a6b7f;--ac:#0a9f7a}}
+body{margin:0;background:var(--bg);color:var(--tx);font:18px/1.75 Georgia,serif}
+main{max-width:680px;margin:auto;padding:48px 20px}
+h1{font:700 clamp(28px,5vw,40px)/1.2 system-ui,sans-serif;margin:0 0 8px}
+h2{font:700 22px system-ui,sans-serif;margin:36px 0 4px}
+.by{color:var(--mu);font:14px system-ui,sans-serif;margin-bottom:28px}
+a{color:var(--ac)}
+</style></head><body><main>
+<a href="index.html">&larr; Back to portfolio</a>
+<h1 style="margin-top:20px">What Really Drives House Prices? Lessons From 1,460 Sales</h1>
+<div class="by">By Shnoda Faik Botros Angly &middot; Data Science &amp; Machine Learning</div>
+
+<p>If you are buying, selling or investing in property, one question matters most: what actually makes a house worth more? I analysed 1,460 home sales from Ames, Iowa, each described by 79 features, to find out. Here is what the data says, in plain language.</p>
+
+<h2>Quality and size come first</h2>
+<p>Out of all 79 features, the overall quality rating of the house had the strongest link to price, followed closely by total floor area (basement plus both floors). Bigger, better-built houses cost more. That sounds obvious, but the data also shows how strong the effect is: quality alone was a stronger signal than the garage, the number of bathrooms, or the year the house was built.</p>
+
+<h2>Location still matters</h2>
+<p>The neighborhood makes a big difference. The median sale price in the three most expensive areas was between $278,000 and $315,000. In the cheapest areas it was between $88,000 and $106,000. Two similar houses can be worth very different amounts depending only on where they stand.</p>
+
+<h2>A data trap: "missing" does not always mean missing</h2>
+<p>Before any prediction, the data had to be cleaned. At first glance, 19 columns looked incomplete. Pool quality was "missing" for 1,453 of 1,460 houses. But the entry simply meant the house has no pool. Treating these as real gaps would have thrown away useful information, so I labelled them "None" instead. A small decision like this can change the whole result.</p>
+
+<h2>How well can a computer predict the price?</h2>
+<p>I trained three models and tested them on houses they had never seen. The simplest one, a regularised linear model, won. It explained about 93% of the variation in prices, and its average error was about $14,300 on houses with a median price of $167,000, roughly 9%.</p>
+
+<h2>What this means for you</h2>
+<ul>
+<li><b>Sellers:</b> improvements that raise the overall quality are likely to matter more than small extras.</li>
+<li><b>Buyers:</b> compare prices within the same neighborhood, because location shifts the price a lot.</li>
+<li><b>Businesses:</b> even a simple model can give a useful price estimate, as long as the data is cleaned carefully first.</li>
+</ul>
+<p><i>Note: this analysis covers one city and sales between 2006 and 2010, so it shows patterns, not guarantees. The full code is in my <a href="https://github.com/shnoda838-angly/portfolio/blob/main/House_Price_Prediction.ipynb">House Price Prediction notebook</a>.</i></p>
+</main></body></html>
